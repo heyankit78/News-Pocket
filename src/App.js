@@ -10,7 +10,7 @@ import {
 } from "react-router-dom";
 
 const App = () => {
-  const pageSize = 5;
+  const pageSize = 6;
   const [progress, setProgress] = useState(0);
     return <div>
     <Router>

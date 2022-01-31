@@ -30,6 +30,7 @@ const News = (props) => {
   useEffect(() => {
      document.title = `${capitalizeFirstLetter(props.category)}-NewsPocket`
     updateNews()
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   const handlePrevClick = async () => {
@@ -50,6 +51,7 @@ const News = (props) => {
             return (
               <div className="col-md-4" key={element.url}>
                 <NewsItem
+                  key={element.url}
                   title={element.title ? element.title.slice(0, 45) : ""}
                   description={
                     element.description ? element.description.slice(0, 88) : ""
@@ -64,7 +66,7 @@ const News = (props) => {
             );
           })}
         </div>
-        <div className="container" className="d-flex justify-content-between">
+        <div className="container d-flex justify-content-between">
           <button
             disabled={page <= 1}
             type="button"
